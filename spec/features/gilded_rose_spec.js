@@ -50,5 +50,21 @@ describe('Gilded Rose', function () {
         });
       });
     });
+    describe('Aged Brie', function () {
+      describe('positive sellIn values', function () {
+        beforeEach(function() {
+          const gildedRose = new Shop([new Item('Aged Brie', 5, 10)]);
+          this.items = gildedRose.updateQuality();
+        });
+
+        it('sellIn should reduce by one', function () {
+          expect(this.items[0].sellIn).toEqual(4);
+        });
+
+        it('quality should increase by one', function () {
+          expect(this.items[0].quality).toEqual(11);
+        });
+      });
+    });
   });
 });
