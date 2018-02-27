@@ -50,6 +50,7 @@ describe('Gilded Rose', function () {
         });
       });
     });
+
     describe('Aged Brie', function () {
       describe('positive sellIn values', function () {
         beforeEach(function() {
@@ -65,6 +66,7 @@ describe('Gilded Rose', function () {
           expect(this.items[0].quality).toEqual(11);
         });
       });
+
       describe('sellIn is 0', function () {
         beforeEach(function() {
           const gildedRose = new Shop([new Item('Aged Brie', 0, 10)]);
@@ -88,6 +90,23 @@ describe('Gilded Rose', function () {
 
         it('quality should not increase', function () {
           expect(this.items[0].quality).toEqual(50);
+        });
+      });
+    });
+
+    describe('Backstage passes to a TAFKAL80ETC concert', function () {
+      describe('sellIn above 10', function () {
+        beforeEach(function() {
+          const gildedRose = new Shop([new Item('Backstage passes to a TAFKAL80ETC concert', 20, 10)]);
+          this.items = gildedRose.updateQuality();
+        });
+
+        it('sellIn should reduce by one', function () {
+          expect(this.items[0].sellIn).toEqual(19);
+        });
+
+        it('quality should increase by one', function () {
+          expect(this.items[0].quality).toEqual(11);
         });
       });
     });
