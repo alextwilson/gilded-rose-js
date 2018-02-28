@@ -9,4 +9,4 @@ My approach for this Kata was to start by building out an extensive test spec - 
 - Backstage passes
 - Sulfuras, Hand of Ragnaros
 
-Once this test suite was complete, I started refactoring the code.
+Once this test suite was complete, I started refactoring the code. I started by making new child classes for each type of item that each had an updateItem method. These classes extended Item to fit the brief of not changing Item. I did this as at the moment there was significant inappropriate intimacy going on in the Gilded Rose, and delegation, together with some polymorphism seemed like a good solution. Each class was responsible for its own behaviour and state changing, and each item contained its own rules for changing sellIn and quality.
