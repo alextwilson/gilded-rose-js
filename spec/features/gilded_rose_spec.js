@@ -131,6 +131,32 @@ describe('Gilded Rose', function () {
           expect(this.items[0].quality).toEqual(13);
         });
       });
+
+      describe('sellIn is 0 or less', function () {
+        beforeEach(function() {
+          const gildedRose = new Shop([new Item('Backstage passes to a TAFKAL80ETC concert', 0, 10)]);
+          this.items = gildedRose.updateQuality();
+        });
+
+        it('quality should decrease to zero', function () {
+          expect(this.items[0].quality).toEqual(0);
+        });
+      });
+    });
+
+    describe('Sulfuras, Hand of Ragnaros', function () {
+      beforeEach(function() {
+        const gildedRose = new Shop([new Item('Sulfuras, Hand of Ragnaros', 0, 80)]);
+        this.items = gildedRose.updateQuality();
+      });
+
+      it('quality should not change', function () {
+        expect(this.items[0].quality).toEqual(80);
+      });
+
+      it('sellIn should not change', function () {
+        expect(this.items[0].sellIn).toEqual(0);
+      });
     });
   });
 });
