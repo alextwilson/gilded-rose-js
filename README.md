@@ -13,7 +13,7 @@ My approach for this Kata was to start by building out an extensive test spec - 
 
 Once this test suite was complete, I started refactoring the code. I started by making new child classes for each type of item that each had an updateItem method. These classes extended Item to fit the brief of not changing Item. I did this as at the moment there was significant inappropriate intimacy going on in the Gilded Rose, and delegation, together with some polymorphism seemed like a good solution. Each class was responsible for its own behaviour and state changing, and each item contained its own rules for changing sellIn and quality.
 
-Once all existing behaviour had been built out with extended classes, I moved on to adding the Conjured Item, starting with when sellIn values were positive.
+Once all existing behaviour had been built out with extended classes, I moved on to adding the Conjured Item, where its quality degrades twice as fast as that of a normal item. I started with when sellIn values were positive, then when sellIn was zero.
 
 ### Dependencies
 

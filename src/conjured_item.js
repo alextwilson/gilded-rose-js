@@ -5,6 +5,10 @@ class ConjuredItem extends Item {
   }
 
   _updateQuality() {
-    this.quality -= 2;
+    if (this.sellIn < 1) {
+      this.quality -= 4;
+    } else {
+      this.quality -= 2;
+    }
   }
 }

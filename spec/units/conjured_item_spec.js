@@ -16,5 +16,20 @@ describe('Conjured Item', function () {
         expect(item.quality).toEqual(3)
       });
     });
+
+    describe('sellIn is 0', function () {
+      beforeEach(function() {
+        item = new ConjuredItem('conjured shoes', 0, 5);
+        item.updateItem();
+      });
+
+      it('decreases sellIn by one', function () {
+        expect(item.sellIn).toEqual(-1)
+      });
+
+      it('decreases quality by two', function () {
+        expect(item.quality).toEqual(1)
+      });
+    });
   });
 });
