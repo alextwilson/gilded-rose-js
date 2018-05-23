@@ -15,7 +15,7 @@ Once this test suite was complete, I started refactoring the code. I started by 
 
 Once all existing behaviour had been built out with extended classes, I moved on to adding the Conjured Item, where its quality degrades twice as fast as that of a normal item. I started with when sellIn values were positive, then when sellIn was zero, then finally preventing quality from reducing below zero.
 
-After the development of item behaviour was complete, I removed all of the item logic from the shop class and simply called updateItem on each item in the shop array, allowing delegation to update the item appropriately. At this point, the large feature test mapping out all of the old item behaviour in shop was both failing and irrelevant, so it was rewritten as a true feature test.
+After the development of item behaviour was complete, I removed all of the item logic from the shop class and simply called updateItem on each item in the shop array, allowing delegation to update the item appropriately. At this point, the large feature test mapping out all of the old item behaviour in shop was both failing and irrelevant, so it was rewritten as a true feature test, finishing the exercise.
 
 ### Dependencies
 
