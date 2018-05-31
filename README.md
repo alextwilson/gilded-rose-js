@@ -23,9 +23,13 @@ This project has no dependencies for the main code, however Jasmine is used for 
 
 ### Getting Started
 
+
+
 ### Testing
 
-This project was tested with Jasmine.
+This project was tested with Jasmine. There are comprehensive unit tests for the shop and each item. For the item unit tests item value changes are tested under the item conditions stated in the requirements document.
+
+In the feature test goes through a typical user journey, creating the items, shop, and advancing the stock in age.
 
 To run the test suite, open SpecRunner.html in a web browser.
 

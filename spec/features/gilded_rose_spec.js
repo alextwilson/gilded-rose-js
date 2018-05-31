@@ -2,11 +2,11 @@ describe('Gilded Rose', function () {
   var shop;
   var items;
 
-  describe('shop functionality', function () {
+  describe('shop stock update', function () {
     beforeEach(function() {
       items = [
         normalItem = new NormalItem('vest', 10, 5),
-        new TimedItem('Backstage passes to a TAFKAL80ETC concert', 20, 10),
+        timedItem = new TimedItem('Backstage passes to a TAFKAL80ETC concert', 20, 10),
         new AgedItem('Aged Brie', 10, 5),
         new LegendaryItem('Sulfuras, Hand of Ragnaros', 5, 80),
         new ConjuredItem('conjured shoes', 10, 5)
@@ -14,10 +14,17 @@ describe('Gilded Rose', function () {
       shop = new Shop(items);
     });
 
-    it('changes all item values appropriately on shop update', function () {
-      shop.updateQuality();
+    it('changes sellIn value of all items appropriately', function () {
+      shop.updateStock();
       expect(normalItem.sellIn).toEqual(9)
+      expect(timedItem.sellIn).toEqual(19)
+
+    });
+
+    it('changes quality value of all items appropriately', function () {
+      shop.updateStock();
       expect(normalItem.quality).toEqual(4)
+      expect(timedItem.quality).toEqual(11)
     });
   });
 });
