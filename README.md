@@ -59,3 +59,12 @@ In the feature test goes through a typical user journey, creating the items, sho
 To run the test suite, open SpecRunner.html in a web browser.
 
 ### Reflections
+
+I am happy with this solution to the Gilded Rose problem. I have greatly simplified the code, made it more extensible, added a full test suite and stayed well within the bounds set out by the exercise.
+
+There are two things that I am a little unhappy with (or more accurately, extensions I would like to make), however they are both outside the scope of the exercise.
+
+They are:
+
+- Items of multiple types, for example, a conjured timed item. The structure I have built does not lend itself readily to this extension.
+- In its current state the Gilded Rose would not be very useful in the running of a shop as there is no way to add or remove stock, nor is there a simple way to run it. Adding and removing stock would be a simple extension to make, whilst a way to run it would be best devised with the actual user to find the route most suited to them.
