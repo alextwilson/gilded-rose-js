@@ -23,7 +23,32 @@ This project has no dependencies for the main code, however Jasmine is used for 
 
 ### Getting Started
 
+The Gilded Rose is essentially an exercise in working with legacy code with a focus on refactoring, rather than being a truly working product. As such, it does not come with a way to _use_ it, however, the Gilded Rose can still be run:
 
+- Clone this repo
+- Open SpecRunner.html in a web browser
+- Open the browser console
+
+#### Usage
+
+Once in the browser console, the gilded rose can be used like this:
+
+```
+>> items = [
+        normalItem = new NormalItem('vest', 10, 5),
+        timedItem = new TimedItem('Backstage passes to a TAFKAL80ETC concert', 20, 10),
+        agedItem = new AgedItem('Aged Brie', 10, 5),
+        legendaryItem = new LegendaryItem('Sulfuras, Hand of Ragnaros', 5, 80),
+        conjuredItem = new ConjuredItem('conjured shoes', 10, 5)
+      ];
+<- Array(5) [ {…}, {…}, {…}, {…}, {…} ]
+>> shop = new Shop(items)
+<- Object { items: (5) […] }
+>> shop.updateStock()
+<- Array(5) [ {…}, {…}, {…}, {…}, {…} ]
+```
+
+shop.updateStock() returns the item array inside the shop with the item values updated.
 
 ### Testing
 
